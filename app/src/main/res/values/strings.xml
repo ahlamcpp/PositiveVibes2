@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">PositiveVibes2</string>
+    <string name="go">Go</string>
+    <string name="positivevibes">PositiveVibes</string>
+    <string name="go1">GO</string>
+    <string name="hello_beautiful">Hello Beautiful</string>
+    <string name="add_note">Add Note</string>
+    <string name="title_activity_be_happy">BeHappy</string>
+
 </resources>
