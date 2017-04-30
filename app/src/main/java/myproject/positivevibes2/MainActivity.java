@@ -8,9 +8,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-/**
- * Created by macbook on 4/22/17.
- */
 
 public class MainActivity extends AppCompatActivity {
 
