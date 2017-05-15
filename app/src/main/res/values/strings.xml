@@ -6,5 +6,20 @@
     <string name="hello_beautiful">Hello Beautiful</string>
     <string name="add_note">Add Note</string>
     <string name="title_activity_be_happy">BeHappy</string>
+    <string name="let_s_go">Let\'s Go</string>
+    <string name="be_happy">Be Happy</string>
+    <string name="be_positive">Be Positive</string>
+    <string name="don_t_give_up">Don\'t Give Up</string>
+    <string name="faith">Faith</string>
+    <string name="trust">Trust</string>
+    <string name="love">Love</string>
+    <string name="more_successful">More Successful</string>
+    <string name="hope">Hope</string>
+    <string name="honest">Honest</string>
+    <string name="inspiration">Inspiration</string>
+    <string name="forgiveness">Forgiveness</string>
+    <string name="smile">Smile</string>
+    <string name="pleased">Pleased</string>
+    <string name="stay_strong">Stay Strong</string>
 
 </resources>

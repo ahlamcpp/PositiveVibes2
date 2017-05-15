@@ -16,11 +16,35 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service
+            android:name=".MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+
+
+
         <activity android:name=".Screen2" />
+        <activity android:name=".Screen1" />
+        <activity android:name=".BePositive" />
+        <activity android:name=".Smile" />
+        <activity android:name=".MoreSuccessful" />
+        <activity android:name=".Love" />
         <activity
             android:name=".BeHappy"
             android:label="@string/title_activity_be_happy"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".StayStrong" />
+        <activity android:name=".Faith" />
+        <activity android:name=".inspiration" />
+        <activity android:name=".Honesty" />
+        <activity android:name=".Pleased" />
+        <activity android:name=".Trust" />
+        <activity android:name=".Hope" />
+        <activity android:name=".Forgiveness" />
+        <activity android:name=".DontGiveUp"></activity>
     </application>
 
 </manifest>

@@ -29,11 +29,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                Intent toy = new Intent(MainActivity.this,Screen2.class);
+                Intent toy = new Intent(MainActivity.this,Screen1.class);
                 startActivity(toy);
 
             }
         });
+
+
+
 
 
     }
