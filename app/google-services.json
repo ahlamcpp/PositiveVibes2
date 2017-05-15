@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "785802957784",
+    "firebase_url": "https://positivevibes-d6b83.firebaseio.com",
+    "project_id": "positivevibes-d6b83",
+    "storage_bucket": "positivevibes-d6b83.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:785802957784:android:9de7687dc6fa4ac3",
+        "android_client_info": {
+          "package_name": "myproject.positivevibes2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "785802957784-4t1pio5rrm5f5oqhhi3mf7cdkiv16ren.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "myproject.positivevibes2",
+            "certificate_hash": "a09c0bfa0b00f8d13b20ea47ca29aa12e57916a3"
+          }
+        },
+        {
+          "client_id": "785802957784-famm3hd35qeasbuopmej5fiml0tq9o5q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFTA8q_z5DWyrg7i0i78KOjb4-62yqLEg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "785802957784-famm3hd35qeasbuopmej5fiml0tq9o5q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
