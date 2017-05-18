@@ -25,7 +25,6 @@
         </service>
 
 
-
         <activity android:name=".Screen2" />
         <activity android:name=".Screen1" />
         <activity android:name=".BePositive" />

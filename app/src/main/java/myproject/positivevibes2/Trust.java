@@ -31,35 +31,36 @@ public class Trust extends AppCompatActivity {
         mainListView11 = (ListView) findViewById(R.id.mainListView11);
 
         // Create and populate a List of posVibes names.
-        String[] posVibes = new String[]{"It's really about being pleased with yourself.",
-                "Each time I reach a goal or read a great review, I am beyond pleased.",
-                "At the end of the day I'm pleased with the site I created.",
-                "I'm pleased with my life, with the journey.",
-
-                "When you're drowning, you don't say 'I would be incredibly pleased if someone would have the foresight to notice me drowning and come and help me,' you just scream.",
-                "I once had a rose named after me and I was very flattered. But I was not pleased to read the description in the catalogue: no good in a bed, but fine up against a wall.",
-                "If you always do what interests you, at least one person is pleased.",
-
-                "She never envisioned a legal career for me, but she did think it was very important that I be able to support myself, and I think she would be pleased to see what has become of me.",
-
-                "God has been pleased to save us during the years of war that have already passed. We pray that He may be pleased to save us to the end. But we must do our part. ",
-
-                "The man who seeks to please God is the man who people are pleased with. The man who seeks to please others won't satisfy anyone.",
-
-                "I'm pleased to say I grew up in a happy family in Dublin. I feel we're very close.",
-
-                "I was very pleased that the positive things about me and my game outshone the aggressive style of play I use. I would never tone that down, because I believe in that style of play, and I believe that you can play rough on the court and still be a good sport.",
-
-                "I'd love to be one of those people who, whenever you see them, you feel pleased.",
-
-                "It was all so far away - there was quiet and an untouched feel to the country and I could work as I pleased.",
-
-                "The only advantage of not being too good a housekeeper is that your guests are so pleased to feel how very much better they are.",
-
-                "Happiness for me is totally just being at peace knowing that, everything I'm doing, God is pleased with that. It's complete peace for me.",
-
-                "To say that a man is vain means merely that he is pleased with the effect he produces on other people.",
-
+        String[] posVibes = new String[]{"Learning to trust is one of life's most difficult tasks.",
+                "It takes 20 years to build a reputation and five minutes to ruin it.",
+                "We need people in our lives with whom we can be as open as possible. To have real conversations with people may seem like such a simple, obvious suggestion, but it involves courage and risk.",
+                "The glue that holds all relationships together--including the relationship between the leader and the led--is trust, and trust is based on integrity.",
+                "Trust is like blood pressure. It's silent, vital to good health, and if abused it can be deadly.",
+                "Just trust yourself, then you will know how to live.",
+                "Better to trust the man who is frequently in error than the one who is never in doubt.",
+                "It takes two to do the trust tango--the one who risks (the trustor) and the one who is trustworthy (the trustee); each must play their role.",
+                "The leaders who work most effectively, it seems to me, never say 'I.' And that's not because they have trained themselves not to say 'I.' They don't think 'I.' They think 'we'; they think 'team.' They understand their job to be to make the team function. They accept responsibility and don't sidestep it, but 'we' gets the credit.... This is what creates trust, what enables you to get the task done.",
+                "Trust is built when someone is vulnerable and not taken advantage of.",
+                "The best way to find out if you can trust somebody is to trust them.",
+                "If you don't have trust inside your company, then you can't transfer it to your customers.",
+                "The people when rightly and fully trusted will return the trust.",
+                "Trust is the lubrication that makes it possible for organizations to work.",
+                "Trust, but verify.",
+                "Trust each other again and again. When the trust level gets high enough, people transcend apparent limits, discovering new and awesome abilities of which they were previously unaware.",
+                "People follow leaders by choice. Without trust, at best you get compliance.",
+                "When people honor each other, there is a trust established that leads to synergy, interdependence, and deep respect. Both parties make decisions and choices based on what is right, what is best, what is valued most highly.",
+                "When a gifted team dedicates itself to unselfish trust and combines instinct with boldness and effort, it is ready to climb.",
+                "He who does not trust enough will not be trusted.",
+                "Leadership requires five ingredients--brains, energy, determination, trust, and ethics. The key challenges today are in terms of the last two--trust and ethics.",
+                "You must trust and believe in people, or life becomes impossible.",
+                "Wise men put their trust in ideas and not in circumstances.",
+                "Few things help an individual more than to place responsibility upon him, and to let him know that you trust him.",
+                "It is mutual trust, even more than mutual interest, that holds human associations together.",
+                "When the trust account is high, communication is easy, instant, and effective.",
+                "To be trusted is a greater compliment than to be loved.",
+                "When mistrust comes in, loves goes out.",
+                "Trust is built with consistency.",
+                "Whoever is careless with the truth in small matters cannot be trusted with important matters.",
 
         };
 

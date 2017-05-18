@@ -33,35 +33,33 @@ public class Hope extends AppCompatActivity {
         mainListView12 = (ListView) findViewById(R.id.mainListView12);
 
         // Create and populate a List of posVibes names.
-        String[] posVibes = new String[]{"It's really about being pleased with yourself.",
-                "Each time I reach a goal or read a great review, I am beyond pleased.",
-                "At the end of the day I'm pleased with the site I created.",
-                "I'm pleased with my life, with the journey.",
+        String[] posVibes = new String[]{"Hope is the thing with feathers, That perches in the soul , And sings the tune without the words, And never stops at all. ",
+                "Keep your eyes on the sun and you will not see the shadows.",
+                "Look at the bright side.Never give up hope.",
+                "No river can return to its source, yet all rivers must have a beginning. ",
+                "The darkest hours are just before dawn.",
+                "Where there's life, there's hope.",
+                "We must accept finite disappointment, but never lose infinite hope.",
+                "Hope is being able to see that there is light despite all of the darkness.",
+                "Hope is important because it can make the present moment less difficult to bear. If we believe that tomorrow will be better, we can bear a hardship today",
+                "Every cloud has a silver lining.",
+                "Every jack has his jill; if only they can find each other.",
+                "Every pot will find its lid.",
+                "Hope for the best and prepare for the worst.",
+                "Hope is a good breakfast but a bad supper.",
+                "Hope springs eternal.",
+                "However long the night, the dawn will break.",
+                "If it were not for hope, the heart would break.",
+                "Yesterday is history, tomorrow is a mystery, today is a gift of God, which is why we call it the present.",
+                "Listen to the mustn'ts, child. Listen to the don'ts. Listen to the shouldn'ts, the impossibles, the won'ts. Listen to the never haves, then listen close to me... Anything can happen, child. Anything can be.",
+                "You may say I'm a dreamer, but I'm not the only one. I hope someday you'll join us. And the world will live as one.",
+                "When we love, we always strive to become better than we are. When we strive to become better than we are, everything around us becomes better too",
+                "I like the night. Without the dark, we'd never see the stars.",
+                "Hold fast to dreams, For if dreams die, Life is a broken-winged bird, That cannot fly",
 
-                "When you're drowning, you don't say 'I would be incredibly pleased if someone would have the foresight to notice me drowning and come and help me,' you just scream.",
-                "I once had a rose named after me and I was very flattered. But I was not pleased to read the description in the catalogue: no good in a bed, but fine up against a wall.",
-                "If you always do what interests you, at least one person is pleased.",
-
-                "She never envisioned a legal career for me, but she did think it was very important that I be able to support myself, and I think she would be pleased to see what has become of me.",
-
-                "God has been pleased to save us during the years of war that have already passed. We pray that He may be pleased to save us to the end. But we must do our part. ",
-
-                "The man who seeks to please God is the man who people are pleased with. The man who seeks to please others won't satisfy anyone.",
-
-                "I'm pleased to say I grew up in a happy family in Dublin. I feel we're very close.",
-
-                "I was very pleased that the positive things about me and my game outshone the aggressive style of play I use. I would never tone that down, because I believe in that style of play, and I believe that you can play rough on the court and still be a good sport.",
-
-                "I'd love to be one of those people who, whenever you see them, you feel pleased.",
-
-                "It was all so far away - there was quiet and an untouched feel to the country and I could work as I pleased.",
-
-                "The only advantage of not being too good a housekeeper is that your guests are so pleased to feel how very much better they are.",
-
-                "Happiness for me is totally just being at peace knowing that, everything I'm doing, God is pleased with that. It's complete peace for me.",
-
-                "To say that a man is vain means merely that he is pleased with the effect he produces on other people.",
-
+                "There is some good in this world, and it's worth fighting for.",
+                "They say a person needs just three things to be truly happy in this world: someone to love, something to do, and something to hope for.",
+                "And now these three remain: faith, hope and love. But the greatest of these is love.",
 
         };
 

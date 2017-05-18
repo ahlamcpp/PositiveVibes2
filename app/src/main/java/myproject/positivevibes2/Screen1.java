@@ -35,7 +35,7 @@ public class Screen1 extends AppCompatActivity {
         public void onClick(View v) {
 
 
-            Intent int9 = new Intent(Screen1.this,Screen2.class);
+            Intent int9 = new Intent(Screen1.this,BeHappy.class);
             startActivity(int9);
 
         }

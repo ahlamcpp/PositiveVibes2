@@ -26,12 +26,12 @@
 
     <ImageView
         android:id="@+id/imageView1"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="50"
         android:contentDescription=""
         android:scaleType="centerCrop"
-        android:src="@drawable/screen11"
+        android:src="@drawable/screen9"
         tools:ignore="ContentDescription,NestedWeights" />
 
 

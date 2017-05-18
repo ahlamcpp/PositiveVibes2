@@ -32,35 +32,36 @@ public class DontGiveUp extends AppCompatActivity {
         mainListView14 = (ListView) findViewById(R.id.mainListView14);
 
         // Create and populate a List of posVibes names.
-        String[] posVibes = new String[]{"It's really about being pleased with yourself.",
-                "Each time I reach a goal or read a great review, I am beyond pleased.",
-                "At the end of the day I'm pleased with the site I created.",
-                "I'm pleased with my life, with the journey.",
-
-                "When you're drowning, you don't say 'I would be incredibly pleased if someone would have the foresight to notice me drowning and come and help me,' you just scream.",
-                "I once had a rose named after me and I was very flattered. But I was not pleased to read the description in the catalogue: no good in a bed, but fine up against a wall.",
-                "If you always do what interests you, at least one person is pleased.",
-
-                "She never envisioned a legal career for me, but she did think it was very important that I be able to support myself, and I think she would be pleased to see what has become of me.",
-
-                "God has been pleased to save us during the years of war that have already passed. We pray that He may be pleased to save us to the end. But we must do our part. ",
-
-                "The man who seeks to please God is the man who people are pleased with. The man who seeks to please others won't satisfy anyone.",
-
-                "I'm pleased to say I grew up in a happy family in Dublin. I feel we're very close.",
-
-                "I was very pleased that the positive things about me and my game outshone the aggressive style of play I use. I would never tone that down, because I believe in that style of play, and I believe that you can play rough on the court and still be a good sport.",
-
-                "I'd love to be one of those people who, whenever you see them, you feel pleased.",
-
-                "It was all so far away - there was quiet and an untouched feel to the country and I could work as I pleased.",
-
-                "The only advantage of not being too good a housekeeper is that your guests are so pleased to feel how very much better they are.",
-
-                "Happiness for me is totally just being at peace knowing that, everything I'm doing, God is pleased with that. It's complete peace for me.",
-
-                "To say that a man is vain means merely that he is pleased with the effect he produces on other people.",
-
+        String[] posVibes = new String[]{"Fall seven times and stand up eight.",
+                "It's not that I'm so smart, it's just that I stay with problems longer.",
+                "Many of life's failures are people who did not realize how close they were to success when they gave up.",
+                "Failure is only the opportunity to begin again, this time more intelligently.",
+                " A failure is not always a mistake. It may simply be the best one can do under the circumstances. The real mistake is to stop trying.",
+                "Ask yourself this question: 'Will this matter a year from now?",
+                "What if I told you that 10 years from now, your life would be exactly the same? I doubt you'd be happy. So, why are you so afraid of change?",
+                "As I look back on my life, I realize that every time I thought I was being rejected from something good, I was actually being redirected to something better.",
+                "Success is the sum of small efforts, repeated day in and day out.",
+                "It does not matter how slowly you go so long as you do not stop.",
+                "Never confuse a single defeat with a final defeat.",
+                "Perseverance is the hard work you do after you get tired of doing the hard work you already did.",
+                "Perseverance is failing 19 times and succeeding the 20th.",
+                "Through perseverance many people win success out of what seemed destined to be certain failure.",
+                "Success seems to be largely a matter of hanging on after others have let go.",
+                "Develop success from failures. Discouragement and failure are two of the surest stepping stones to success.",
+                "Failure is often that early morning hour of darkness which precedes the dawning of the day of success.",
+                "We will either find a way or make one.",
+                "It always seems impossible until it's done.",
+                "The best way out is always through.",
+                "A winner is just a loser who tried one more time.",
+                "I don't know the key to success, but the key to failure is trying to please everybody.",
+                "Defeat is not the worst of failures. Not to have tried is the true failure.",
+                "When you get into a tight place and everything goes against you … never give up then, for that is just the place and time that the tide will turn.",
+                "The man who moves a mountain begins by carrying away small stones.",
+                "I am a slow walker, but I never walk back.",
+                "Every strike brings me closer to the next home run.",
+                "Courage is not having the strength to go on; it is going on when you don't have the strength.",
+                "Character consists of what you do on the third and fourth tries.",
+                "Perseverance is not a long race; it is many short races one after the other.",
 
         };
 
