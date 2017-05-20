@@ -2,6 +2,7 @@ package myproject.positivevibes2;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -22,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         myImage = (ImageView) findViewById(R.id.imageView1);
-        textView1 = (TextView) findViewById(R.id.textView1);
+       /* textView1 = (TextView) findViewById(R.id.textView1);*/
         button1 = (Button) findViewById(R.id.button1);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,6 +48,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         init();
 
+
+/*
+
+        ActionBar ab = getSupportActionBar();
+        ab.setLogo(R.drawable.logo);
+        ab.setDisplayUseLogoEnabled(true);
+        ab.setDisplayShowHomeEnabled(true);
+
+*/
 
 
 

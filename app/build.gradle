@@ -2,11 +2,16 @@ apply plugin: 'com.android.application'
 
 android {
     signingConfigs {
-        config {
-            keyAlias 'key0'
-            keyPassword '123456'
-            storeFile file('/Users/macbook/Desktop/apk1.jks')
-            storePassword '123456'
+        config1 {
+            keyAlias 'key3'
+            keyPassword 'aman390020'
+            storeFile file('/Users/macbook/Desktop/apk3.jks')
+            storePassword 'ahlam390020'
+        }
+        config4 {
+            keyAlias 'key4'
+            keyPassword 'amal0020'
+            storePassword 'afrah0020'
         }
     }
     compileSdkVersion 25
@@ -18,12 +23,18 @@ android {
         versionCode 2
         versionName "2.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.config4
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.config
+            signingConfig signingConfigs.config4
+        }
+    }
+    productFlavors {
+        free {
+            signingConfig signingConfigs.config4
         }
     }
 }

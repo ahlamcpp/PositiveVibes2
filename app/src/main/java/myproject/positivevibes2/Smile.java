@@ -1,5 +1,79 @@
 package myproject.positivevibes2;
 
+
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+
+
+import android.support.v7.app.ActionBarActivity;
+
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+
+import android.widget.Button;
+import android.widget.EditText;
+
+
+public class Smile extends ActionBarActivity {
+    ArrayAdapter<String> adapter;
+    EditText editText;
+    ArrayList<String> itemList;
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_smile);
+        String[] items={" Smile in the mirror. Do that every morning and you'll start to see a big difference in your life.",
+                "Share your smile with the world. It's a symbol of friendship and peace.",
+                "Never frown because you never know who is falling in love with your smile.",
+                "Keep smiling… It makes people wonder what you’ve been up to.",
+                "I smile not for that I am happy, but sometimes I smile to hide sadness.",
+                " One smile can’t change the world, but your smile changes mine.",
+                "I keep my head held high and smile, because there are people who will kill to see me fall.",
+                " You walk through life much easier with a smile on your face.",
+                "A smiling face is a beautiful face. A smiling heart is a happy heart.",
+                "I smile because I have no idea what’s going on.",
+                "Worry less. Smile more. Listen carefully. Take responsibility. Accept what you can’t change.Embrace the lessons. Love your life. Today.",
+                "Smiling makes people feel good and positive, conveying a sense of good-will, rapport and trust.",
+                "Smiling speaks to people charmingly without saying a word.",
+                " Be someone else’s sunshine. Be the reason someone smiles today.",
+                "Smile.. And the world will smile at you..", "A smile is an inexpensive way to change your looks.",
+
+
+        };
+        itemList=new ArrayList<String>(Arrays.asList(items));
+        adapter=new ArrayAdapter<String>(this,R.layout.screen1_row,R.id.rowTextView,itemList);
+        ListView listV=(ListView)findViewById(R.id.mainListView4);
+        listV.setAdapter(adapter);
+        editText=(EditText)findViewById(R.id.txtInput);
+        Button btAdd=(Button)findViewById(R.id.btAdd);
+        btAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String newItem=editText.getText().toString();
+                // add new item to arraylist
+                itemList.add(newItem);
+                // notify listview of data changed
+                adapter.notifyDataSetChanged();
+
+            }
+
+        });
+
+    }
+
+}
+
+
+/*
+
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
@@ -22,9 +96,11 @@ public class Smile extends AppCompatActivity {
 
 
 
-    /**
+    */
+/**
      * Called when the activity is first created.
-     */
+     *//*
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,3 +152,4 @@ public class Smile extends AppCompatActivity {
     }
 }
 
+*/

@@ -1,5 +1,82 @@
 package myproject.positivevibes2;
 
+
+
+
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+
+
+import android.support.v7.app.ActionBarActivity;
+
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+
+import android.widget.Button;
+import android.widget.EditText;
+
+
+public class StayStrong extends ActionBarActivity {
+    ArrayAdapter<String> adapter;
+    EditText editText;
+    ArrayList<String> itemList;
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_stay_strong);
+        String[] items={"The strongest people find the courage and caring to help others, even if they are going through their own storm",
+                "If you build the guts to do something, anything, then you better save enough to face the consequences.",
+                "The one who falls and gets up is stronger than the one who never tried. Do not fear failure but rather fear not trying",
+                "Stay strong, stay positive, and never give up",
+                "So he tasted the deep pain that is reserved only for the strong, just as he had tasted for a little while the deep happiness.",
+                "Always do what you're afraid to do. ",
+                "Every challenge you face today makes you stronger tomorrow. The challenge of life is intended to make you better, not bitter",
+                "I feel like myself, strong and weak at once - allowed, at least for a little while, to be both.",
+                "That is the rule of the Wilds: You must be bigger and stronger and tougher. You must hurt or be hurt.",
+                "Strong people don't put others down... They lift them up.",
+                "They wore their strange beauty like war paint",
+                "The weak fall, but the strong will remain and never go under!",
+                "I’d never been a good damsel in distress. I was a 'hands-on' damsel.",
+                "A strong gives forgiveness but weak gives permission.",
+                "People seem weak, but they're strong. They seem strong, but they're weak.",
+                "On the left side of a strong woman, stands a strong man; he is strengthened by her character",
+                "The hollowness was in his arms and the world was snowing.",
+
+
+        };
+        itemList=new ArrayList<String>(Arrays.asList(items));
+        adapter=new ArrayAdapter<String>(this,R.layout.screen1_row,R.id.rowTextView,itemList);
+        ListView listV=(ListView)findViewById(R.id.mainListView6);
+        listV.setAdapter(adapter);
+        editText=(EditText)findViewById(R.id.txtInput);
+        Button btAdd=(Button)findViewById(R.id.btAdd);
+        btAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String newItem=editText.getText().toString();
+                // add new item to arraylist
+                itemList.add(newItem);
+                // notify listview of data changed
+                adapter.notifyDataSetChanged();
+
+            }
+
+        });
+
+    }
+
+}
+
+
+/*
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
@@ -20,9 +97,11 @@ public class StayStrong extends AppCompatActivity {
 
 
 
-    /**
+    */
+/**
      * Called when the activity is first created.
-     */
+     *//*
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,3 +154,4 @@ public class StayStrong extends AppCompatActivity {
         mainListView6.setAdapter(listAdapter);
     }
 }
+*/
