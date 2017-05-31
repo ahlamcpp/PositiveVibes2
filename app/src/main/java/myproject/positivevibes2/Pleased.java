@@ -21,6 +21,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import io.paperdb.Paper;
+
 
 public class Pleased extends ActionBarActivity {
     ArrayAdapter<String> adapter;
@@ -29,6 +31,7 @@ public class Pleased extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pleased);
+        Paper.init(this);
         String[] items={"It's really about being pleased with yourself.",
                 "Each time I reach a goal or read a great review, I am beyond pleased.",
                 "At the end of the day I'm pleased with the site I created.",
@@ -60,7 +63,12 @@ public class Pleased extends ActionBarActivity {
 
 
         };
-        itemList=new ArrayList<String>(Arrays.asList(items));
+
+        itemList = Paper.book().read("itemsPleased");
+        if(itemList==null){
+            itemList=new ArrayList<String>(Arrays.asList(items));
+        }
+
         adapter=new ArrayAdapter<String>(this,R.layout.screen1_row,R.id.rowTextView,itemList);
         ListView listV=(ListView)findViewById(R.id.mainListView10);
         listV.setAdapter(adapter);
@@ -72,6 +80,7 @@ public class Pleased extends ActionBarActivity {
                 String newItem=editText.getText().toString();
                 // add new item to arraylist
                 itemList.add(newItem);
+                Paper.book().write("itemsPleased", itemList);
                 // notify listview of data changed
                 adapter.notifyDataSetChanged();
 

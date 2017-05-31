@@ -20,6 +20,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import io.paperdb.Paper;
+
 
 public class DontGiveUp extends ActionBarActivity {
     ArrayAdapter<String> adapter;
@@ -28,6 +30,7 @@ public class DontGiveUp extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dont_give_up);
+        Paper.init(this);
         String[] items={"Fall seven times and stand up eight.",
                 "It's not that I'm so smart, it's just that I stay with problems longer.",
                 "Many of life's failures are people who did not realize how close they were to success when they gave up.",
@@ -60,7 +63,14 @@ public class DontGiveUp extends ActionBarActivity {
                 "Perseverance is not a long race; it is many short races one after the other.",
 
         };
-        itemList=new ArrayList<String>(Arrays.asList(items));
+
+
+        itemList = Paper.book().read("itemsDontGiveUp");
+        if(itemList==null){
+            itemList=new ArrayList<String>(Arrays.asList(items));
+        }
+
+
         adapter=new ArrayAdapter<String>(this,R.layout.screen1_row,R.id.rowTextView,itemList);
         ListView listV=(ListView)findViewById(R.id.mainListView14);
         listV.setAdapter(adapter);
@@ -72,6 +82,7 @@ public class DontGiveUp extends ActionBarActivity {
                 String newItem=editText.getText().toString();
                 // add new item to arraylist
                 itemList.add(newItem);
+                Paper.book().write("itemsDontGiveUp", itemList);
                 // notify listview of data changed
                 adapter.notifyDataSetChanged();
 

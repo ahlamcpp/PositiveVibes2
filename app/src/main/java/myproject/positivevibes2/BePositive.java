@@ -19,6 +19,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import io.paperdb.Paper;
+
 
 public class BePositive extends AppCompatActivity {
     ArrayAdapter<String> adapter;
@@ -27,6 +29,7 @@ public class BePositive extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_be_positive);
+        Paper.init(this);
         String[] items={"Once you replace negative thoughts with positive ones, you'll start having positive results.",
                 "A strong, positive self-image is the best possible preparation for success.",
                 "Work hard, stay positive, and get up early. It's the best part of the day.",
@@ -45,7 +48,12 @@ public class BePositive extends AppCompatActivity {
 
 
         };
-        itemList=new ArrayList<String>(Arrays.asList(items));
+        itemList = Paper.book().read("itemsPositive");
+        if(itemList==null){
+            itemList=new ArrayList<String>(Arrays.asList(items));
+        }
+
+
         adapter=new ArrayAdapter<String>(this,R.layout.screen1_row,R.id.rowTextView,itemList);
         ListView listV=(ListView)findViewById(R.id.mainListView2);
         listV.setAdapter(adapter);
@@ -57,6 +65,7 @@ public class BePositive extends AppCompatActivity {
                 String newItem=editText.getText().toString();
                 // add new item to arraylist
                 itemList.add(newItem);
+                Paper.book().write("itemsPositive", itemList);
                 // notify listview of data changed
                 adapter.notifyDataSetChanged();
 

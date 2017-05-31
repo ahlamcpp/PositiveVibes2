@@ -23,6 +23,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import io.paperdb.Paper;
+
 
 public class StayStrong extends ActionBarActivity {
     ArrayAdapter<String> adapter;
@@ -31,6 +33,7 @@ public class StayStrong extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stay_strong);
+        Paper.init(this);
         String[] items={"The strongest people find the courage and caring to help others, even if they are going through their own storm",
                 "If you build the guts to do something, anything, then you better save enough to face the consequences.",
                 "The one who falls and gets up is stronger than the one who never tried. Do not fear failure but rather fear not trying",
@@ -51,7 +54,12 @@ public class StayStrong extends ActionBarActivity {
 
 
         };
-        itemList=new ArrayList<String>(Arrays.asList(items));
+
+        itemList = Paper.book().read("itemsStrong");
+        if(itemList==null){
+            itemList=new ArrayList<String>(Arrays.asList(items));
+        }
+
         adapter=new ArrayAdapter<String>(this,R.layout.screen1_row,R.id.rowTextView,itemList);
         ListView listV=(ListView)findViewById(R.id.mainListView6);
         listV.setAdapter(adapter);
@@ -63,6 +71,7 @@ public class StayStrong extends ActionBarActivity {
                 String newItem=editText.getText().toString();
                 // add new item to arraylist
                 itemList.add(newItem);
+                Paper.book().write("itemsStrong", itemList);
                 // notify listview of data changed
                 adapter.notifyDataSetChanged();
 

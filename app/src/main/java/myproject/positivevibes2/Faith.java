@@ -21,6 +21,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import io.paperdb.Paper;
+
 
 public class Faith extends ActionBarActivity {
     ArrayAdapter<String> adapter;
@@ -29,6 +31,7 @@ public class Faith extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_faith);
+        Paper.init(this);
         String[] items={"Believe in yourself! Have faith in your abilities! Without a humble but reasonable confidence in your own powers you cannot be successful or happy.",
                 "Always be yourself, express yourself, have faith in yourself, do not go out and look for a successful personality and duplicate it.",
                 "Faith is the bird that feels the light when the dawn is still dark.",
@@ -50,7 +53,13 @@ public class Faith extends ActionBarActivity {
 
 
         };
-        itemList=new ArrayList<String>(Arrays.asList(items));
+
+        itemList = Paper.book().read("itemsFaith");
+        if(itemList==null){
+            itemList=new ArrayList<String>(Arrays.asList(items));
+        }
+
+
         adapter=new ArrayAdapter<String>(this,R.layout.screen1_row,R.id.rowTextView,itemList);
         ListView listV=(ListView)findViewById(R.id.mainListView7);
         listV.setAdapter(adapter);
@@ -62,6 +71,7 @@ public class Faith extends ActionBarActivity {
                 String newItem=editText.getText().toString();
                 // add new item to arraylist
                 itemList.add(newItem);
+                Paper.book().write("itemsFaith", itemList);
                 // notify listview of data changed
                 adapter.notifyDataSetChanged();
 

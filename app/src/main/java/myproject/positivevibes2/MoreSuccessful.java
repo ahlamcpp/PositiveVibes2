@@ -23,6 +23,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import io.paperdb.Paper;
+
 
 public class MoreSuccessful extends ActionBarActivity {
     ArrayAdapter<String> adapter;
@@ -31,6 +33,7 @@ public class MoreSuccessful extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_more_successful);
+        Paper.init(this);
         String[] items={"Success is no accident. It is hard work, perseverance, learning, studying, sacrifice and most of all, love of what you are doing or learning to do.",
                 "Put your heart, mind, and soul into even your smallest acts. This is the secret of success.",
                 "There are no secrets to success. It is the result of preparation, hard work, and learning from failure.",
@@ -52,7 +55,12 @@ public class MoreSuccessful extends ActionBarActivity {
 
 
         };
-        itemList=new ArrayList<String>(Arrays.asList(items));
+
+        itemList = Paper.book().read("itemsSucc");
+        if(itemList==null){
+            itemList=new ArrayList<String>(Arrays.asList(items));
+        }
+
         adapter=new ArrayAdapter<String>(this,R.layout.screen1_row,R.id.rowTextView,itemList);
         ListView listV=(ListView)findViewById(R.id.mainListView3);
         listV.setAdapter(adapter);
@@ -64,6 +72,7 @@ public class MoreSuccessful extends ActionBarActivity {
                 String newItem=editText.getText().toString();
                 // add new item to arraylist
                 itemList.add(newItem);
+                Paper.book().write("itemsSucc", itemList);
                 // notify listview of data changed
                 adapter.notifyDataSetChanged();
 

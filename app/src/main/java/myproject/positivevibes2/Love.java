@@ -22,6 +22,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import io.paperdb.Paper;
+
 
 public class Love extends ActionBarActivity {
     ArrayAdapter<String> adapter;
@@ -30,6 +32,7 @@ public class Love extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_love);
+        Paper.init(this);
         String[] items={"There is only one happiness in this life, to love and be loved.",
                 " I look at you and see the rest of my life in front of my eyes.",
                 "The greatest happiness of life is the conviction that we are loved, loved for ourselves, or rather, loved in spite of ourselves.",
@@ -52,7 +55,14 @@ public class Love extends ActionBarActivity {
 
 
         };
-        itemList=new ArrayList<String>(Arrays.asList(items));
+
+
+        itemList = Paper.book().read("itemsLove");
+        if(itemList==null){
+            itemList=new ArrayList<String>(Arrays.asList(items));
+        }
+
+
         adapter=new ArrayAdapter<String>(this,R.layout.screen1_row,R.id.rowTextView,itemList);
         ListView listV=(ListView)findViewById(R.id.mainListView5);
         listV.setAdapter(adapter);
@@ -64,6 +74,7 @@ public class Love extends ActionBarActivity {
                 String newItem=editText.getText().toString();
                 // add new item to arraylist
                 itemList.add(newItem);
+                Paper.book().write("itemsLove", itemList);
                 // notify listview of data changed
                 adapter.notifyDataSetChanged();
 

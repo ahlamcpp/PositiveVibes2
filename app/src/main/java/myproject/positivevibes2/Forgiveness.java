@@ -21,6 +21,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import io.paperdb.Paper;
+
 
 public class Forgiveness extends ActionBarActivity {
     ArrayAdapter<String> adapter;
@@ -29,6 +31,7 @@ public class Forgiveness extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgiveness);
+        Paper.init(this);
         String[] items={"There is no love without forgiveness, and there is no forgiveness without love.",
 
                 "A happy marriage is the union of two good forgivers.",
@@ -89,7 +92,13 @@ public class Forgiveness extends ActionBarActivity {
 
 
         };
-        itemList=new ArrayList<String>(Arrays.asList(items));
+
+        itemList = Paper.book().read("itemsForG");
+        if(itemList==null){
+            itemList=new ArrayList<String>(Arrays.asList(items));
+        }
+
+
         adapter=new ArrayAdapter<String>(this,R.layout.screen1_row,R.id.rowTextView,itemList);
         ListView listV=(ListView)findViewById(R.id.mainListView13);
         listV.setAdapter(adapter);
@@ -101,6 +110,7 @@ public class Forgiveness extends ActionBarActivity {
                 String newItem=editText.getText().toString();
                 // add new item to arraylist
                 itemList.add(newItem);
+                Paper.book().write("itemsForG", itemList);
                 // notify listview of data changed
                 adapter.notifyDataSetChanged();
 

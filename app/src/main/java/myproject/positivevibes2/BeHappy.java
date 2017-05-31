@@ -31,6 +31,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import io.paperdb.Paper;
+
 
 public class BeHappy extends ActionBarActivity {
     ArrayAdapter<String> adapter;
@@ -39,6 +41,7 @@ public class BeHappy extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_be_happy);
+        Paper.init(this);
         String[] items={"I just find myself happy with the simple things. Appreciating the blessings God gave me.",
                 "Learn to enjoy every minute of your life. Be happy now. Don't wait for something outside of yourself to make you happy in the future.",
                 " Happiness is a choice. You can choose to be happy. There's going to be stress in life, but it's your choice whether you let it affect you or not.",
@@ -63,7 +66,11 @@ public class BeHappy extends ActionBarActivity {
 
 
         };
-        itemList=new ArrayList<String>(Arrays.asList(items));
+        itemList = Paper.book().read("itemsHappy");
+        if(itemList==null){
+            itemList=new ArrayList<String>(Arrays.asList(items));
+        }
+
         adapter=new ArrayAdapter<String>(this,R.layout.screen1_row,R.id.rowTextView,itemList);
         ListView listV=(ListView)findViewById(R.id.mainListView1);
         listV.setAdapter(adapter);
@@ -75,6 +82,7 @@ public class BeHappy extends ActionBarActivity {
                 String newItem=editText.getText().toString();
                 // add new item to arraylist
                 itemList.add(newItem);
+                Paper.book().write("itemsHappy", itemList);
                 // notify listview of data changed
                 adapter.notifyDataSetChanged();
 

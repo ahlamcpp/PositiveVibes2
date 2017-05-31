@@ -22,6 +22,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import io.paperdb.Paper;
+
 
 public class Trust extends ActionBarActivity {
     ArrayAdapter<String> adapter;
@@ -30,6 +32,7 @@ public class Trust extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trust);
+        Paper.init(this);
         String[] items={"Learning to trust is one of life's most difficult tasks.",
                 "It takes 20 years to build a reputation and five minutes to ruin it.",
                 "We need people in our lives with whom we can be as open as possible. To have real conversations with people may seem like such a simple, obvious suggestion, but it involves courage and risk.",
@@ -62,7 +65,13 @@ public class Trust extends ActionBarActivity {
                 "Whoever is careless with the truth in small matters cannot be trusted with important matters.",
 
         };
-        itemList=new ArrayList<String>(Arrays.asList(items));
+
+        itemList = Paper.book().read("itemsTrust");
+        if(itemList==null){
+            itemList=new ArrayList<String>(Arrays.asList(items));
+        }
+
+
         adapter=new ArrayAdapter<String>(this,R.layout.screen1_row,R.id.rowTextView,itemList);
         ListView listV=(ListView)findViewById(R.id.mainListView11);
         listV.setAdapter(adapter);
@@ -74,6 +83,7 @@ public class Trust extends ActionBarActivity {
                 String newItem=editText.getText().toString();
                 // add new item to arraylist
                 itemList.add(newItem);
+                Paper.book().write("itemsTrust", itemList);
                 // notify listview of data changed
                 adapter.notifyDataSetChanged();
 

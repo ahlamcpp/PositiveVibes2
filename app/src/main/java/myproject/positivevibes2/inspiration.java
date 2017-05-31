@@ -23,6 +23,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import io.paperdb.Paper;
+
 
 public class inspiration extends ActionBarActivity {
     ArrayAdapter<String> adapter;
@@ -31,6 +33,7 @@ public class inspiration extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inspiration);
+        Paper.init(this);
         String[] items={"Keep your eyes on the stars and your feet on the ground.",
                 "Be who you are and say what you feel, because those who mind don't matter and those who matter don't mind.",
                 "This too, shall pass.",
@@ -57,7 +60,13 @@ public class inspiration extends ActionBarActivity {
 
 
         };
-        itemList=new ArrayList<String>(Arrays.asList(items));
+
+
+        itemList = Paper.book().read("itemsin");
+        if(itemList==null){
+            itemList=new ArrayList<String>(Arrays.asList(items));
+        }
+
         adapter=new ArrayAdapter<String>(this,R.layout.screen1_row,R.id.rowTextView,itemList);
         ListView listV=(ListView)findViewById(R.id.mainListView8);
         listV.setAdapter(adapter);
@@ -69,6 +78,7 @@ public class inspiration extends ActionBarActivity {
                 String newItem=editText.getText().toString();
                 // add new item to arraylist
                 itemList.add(newItem);
+                Paper.book().write("itemsin", itemList);
                 // notify listview of data changed
                 adapter.notifyDataSetChanged();
 

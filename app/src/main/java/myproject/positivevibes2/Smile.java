@@ -21,6 +21,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import io.paperdb.Paper;
+
 
 public class Smile extends ActionBarActivity {
     ArrayAdapter<String> adapter;
@@ -29,6 +31,7 @@ public class Smile extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_smile);
+        Paper.init(this);
         String[] items={" Smile in the mirror. Do that every morning and you'll start to see a big difference in your life.",
                 "Share your smile with the world. It's a symbol of friendship and peace.",
                 "Never frown because you never know who is falling in love with your smile.",

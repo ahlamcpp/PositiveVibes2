@@ -22,6 +22,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import io.paperdb.Paper;
+
 
 public class Hope extends ActionBarActivity {
     ArrayAdapter<String> adapter;
@@ -30,6 +32,7 @@ public class Hope extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hope);
+        Paper.init(this);
         String[] items={"Hope is the thing with feathers, That perches in the soul , And sings the tune without the words, And never stops at all. ",
                 "Keep your eyes on the sun and you will not see the shadows.",
                 "Look at the bright side.Never give up hope.",
@@ -60,7 +63,11 @@ public class Hope extends ActionBarActivity {
 
 
         };
-        itemList=new ArrayList<String>(Arrays.asList(items));
+        itemList = Paper.book().read("itemsHope");
+        if(itemList==null){
+            itemList=new ArrayList<String>(Arrays.asList(items));
+        }
+
         adapter=new ArrayAdapter<String>(this,R.layout.screen1_row,R.id.rowTextView,itemList);
         ListView listV=(ListView)findViewById(R.id.mainListView12);
         listV.setAdapter(adapter);
@@ -72,6 +79,7 @@ public class Hope extends ActionBarActivity {
                 String newItem=editText.getText().toString();
                 // add new item to arraylist
                 itemList.add(newItem);
+                Paper.book().write("itemsHope", itemList);
                 // notify listview of data changed
                 adapter.notifyDataSetChanged();
 

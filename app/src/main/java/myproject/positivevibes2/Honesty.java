@@ -22,6 +22,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import io.paperdb.Paper;
+
 
 public class Honesty extends ActionBarActivity {
     ArrayAdapter<String> adapter;
@@ -30,6 +32,7 @@ public class Honesty extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_honesty);
+        Paper.init(this);
         String[] items={"Honesty is the best policy. when there is money in it.",
                 "Honesty is the fastest way to prevent a mistake from turning into a failure.",
                 "Integrity is telling myself the truth. And honesty is telling the truth to other people.",
@@ -62,7 +65,12 @@ public class Honesty extends ActionBarActivity {
 
 
         };
-        itemList=new ArrayList<String>(Arrays.asList(items));
+
+        itemList = Paper.book().read("itemsHonest");
+        if(itemList==null){
+            itemList=new ArrayList<String>(Arrays.asList(items));
+        }
+
         adapter=new ArrayAdapter<String>(this,R.layout.screen1_row,R.id.rowTextView,itemList);
         ListView listV=(ListView)findViewById(R.id.mainListView9);
         listV.setAdapter(adapter);
@@ -74,6 +82,7 @@ public class Honesty extends ActionBarActivity {
                 String newItem=editText.getText().toString();
                 // add new item to arraylist
                 itemList.add(newItem);
+                Paper.book().write("itemsHonest", itemList);
                 // notify listview of data changed
                 adapter.notifyDataSetChanged();
 
